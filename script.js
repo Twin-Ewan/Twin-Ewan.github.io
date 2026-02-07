@@ -21,7 +21,7 @@ class Section {
     }
 }
 
-class entry {    
+class Entry {    
     // My beautiful son overloading, dead
     constructor(display, link) {
         if(!link)
@@ -41,10 +41,10 @@ function GenerateSidebar()
 {
     const Sidebar = document.getElementById("contents");
 
-    const GenLinks = [new entry("Home", "/"), new entry("Highlights"), new entry("About Me")];
+    const GenLinks = [new Entry("Home", "/"), new Entry("Highlights"), new Entry("About Me")];
     const General = new Section("General", GenLinks);
 
-    const EduLinks = [new entry("Year 4"), new entry("Year 3"), new entry("HND"), new entry("HNC"), new entry("Highschool")]
+    const EduLinks = [new Entry("Year 4"), new Entry("Year 3"), new Entry("HND"), new Entry("HNC"), new Entry("Highschool")]
     const Education = new Section("Education", EduLinks);
 
     const Contents = [General, Education];
