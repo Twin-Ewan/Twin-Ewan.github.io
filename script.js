@@ -41,7 +41,7 @@ function GenerateSidebar()
 {
     const Sidebar = document.getElementById("contents");
 
-    const GenLinks = [new Entry("Home", "/"), new Entry("Highlights"), new Entry("About Me")];
+    const GenLinks = [new Entry("Home", ""), new Entry("Highlights"), new Entry("About Me")];
     const General = new Section("General", GenLinks);
 
     const EduLinks = [new Entry("Year 4"), new Entry("Year 3"), new Entry("HND"), new Entry("HNC"), new Entry("Highschool")]
@@ -53,7 +53,7 @@ function GenerateSidebar()
         Sidebar.innerHTML += `<h5>${section.header}</h5>`;
 
         section.entries.forEach(entry => {
-            Sidebar.innerHTML += `<a href="/${entry.link}/">${entry.display}</a>`; 
+            Sidebar.innerHTML += `<a href='/${entry.link}/'>${entry.display}</a>`; 
         });
     });
 }
