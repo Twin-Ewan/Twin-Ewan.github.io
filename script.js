@@ -1,8 +1,33 @@
 function Load()
 {
     CreateHeader();
-    GenerateSidebar();
+    GenerateNavbar();
+    CreateRepoText();
 }
+
+function GetLocation()
+{
+    let filepath = window.location.pathname;
+    filepath = filepath.split("/");
+
+    // Checks if its has a single / (I.e is home)
+    if(filepath.length - 2) 
+    {
+        let folder = filepath[filepath.length - 2] // Removes everything but the folder
+        folder = folder.split("%");
+
+        // Reconstrusts the UTF8 back into characters
+        let recontrusted = folder[0];
+        for(let i = 1; i < folder.length; i++)
+        {
+            let CharCode = parseInt(folder[1].substring(0, 2));
+            recontrusted += String.fromCharCode(`0x${CharCode}`) + folder[i].substring(2, folder[i].length);
+        }
+        return recontrusted;
+    } 
+    else return "Home"; 
+}
+
 
 function CreateHeader()
 {
@@ -11,7 +36,8 @@ function CreateHeader()
     Header.innerHTML += '<link rel="icon" type="image/x-icon" href="/icon.ico"></link>';
     Header.innerHTML += '<link rel="stylesheet" type="text/css" href="/styles.css">';
 
-    console.log(window.location.pathname);
+    Header.innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+    Header.innerHTML += `<title> Portfolio - ${GetLocation()} </title>`;
 }
 
 class Section {
@@ -37,18 +63,19 @@ class Entry {
     }
 }
 
-function GenerateSidebar()
+function GenerateNavbar()
 {
-    const Sidebar = document.getElementById("contents");
+    const Sidebar = document.getElementById("sidebar");
 
-    const GenLinks = [new Entry("Home", ""), new Entry("Highlights"), new Entry("About Me")];
+    const GenLinks = [new Entry("Home", ""), new Entry("Highlights"), new Entry("About Me"), new Entry("Personal Projects", "Personal")];
     const General = new Section("General", GenLinks);
 
     const EduLinks = [new Entry("Year 4"), new Entry("Year 3"), new Entry("HND"), new Entry("HNC"), new Entry("Highschool")]
     const Education = new Section("Education", EduLinks);
 
-    const Contents = [General, Education];
-    Contents.forEach(section => {
+    const sidebar = [General, Education];
+    const Location = GetLocation();
+    sidebar.forEach(section => {
         
         Sidebar.innerHTML += `<h5>${section.header}</h5>`;
 
@@ -61,8 +88,18 @@ function GenerateSidebar()
             {
                 Sidebar.innerHTML += `<a href='/${entry.link}/'>${entry.display}</a>`; 
             }
+
+            if(Location == entry.link) Sidebar.lastElementChild.id = "current";
         });
     });
 }
 
+function CreateRepoText()
+{
+    const Link = document.querySelectorAll(".repo");
+
+    Link.forEach(element => {
+        element.innerHTML = "<p>GitHub Repo:</p>" + element.innerHTML;
+    });
+}
 Load(); 
