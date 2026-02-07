@@ -53,7 +53,7 @@ function GenerateSidebar()
         Sidebar.innerHTML += `<h5>${section.header}</h5>`;
 
         section.entries.forEach(entry => {
-            Sidebar.innerHTML += `<a href=/"${entry.link}/">${entry.display}</a>`; 
+            Sidebar.innerHTML += `<a href="/${entry.link}/">${entry.display}</a>`; 
         });
     });
 }
