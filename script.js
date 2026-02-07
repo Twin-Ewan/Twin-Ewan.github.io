@@ -24,7 +24,7 @@ class Section {
 class Entry {    
     // My beautiful son overloading, dead
     constructor(display, link) {
-        if(!link)
+        if(!link && link != "")
         {
             this.display = display;
             this.link = display;
