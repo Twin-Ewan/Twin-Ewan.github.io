@@ -1,6 +1,17 @@
 function Load()
 {
+    CreateHeader();
     GenerateSidebar();
+}
+
+function CreateHeader()
+{
+    const Header = document.getElementsByTagName("head")[0];
+
+    Header.innerHTML += '<link rel="icon" type="image/x-icon" href="icon.ico"></link>';
+    Header.innerHTML += '<link rel="stylesheet" type="text/css" href="styles.css">';
+
+    console.log(window.location.pathname);
 }
 
 class Section {
