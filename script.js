@@ -8,8 +8,8 @@ function CreateHeader()
 {
     const Header = document.getElementsByTagName("head")[0];
 
-    Header.innerHTML += '<link rel="icon" type="image/x-icon" href="icon.ico"></link>';
-    Header.innerHTML += '<link rel="stylesheet" type="text/css" href="styles.css">';
+    Header.innerHTML += '<link rel="icon" type="image/x-icon" href="/icon.ico"></link>';
+    Header.innerHTML += '<link rel="stylesheet" type="text/css" href="/styles.css">';
 
     console.log(window.location.pathname);
 }
@@ -53,7 +53,7 @@ function GenerateSidebar()
         Sidebar.innerHTML += `<h5>${section.header}</h5>`;
 
         section.entries.forEach(entry => {
-            Sidebar.innerHTML += `<a href="${entry.link}/">${entry.display}</a>`; 
+            Sidebar.innerHTML += `<a href=/"${entry.link}/">${entry.display}</a>`; 
         });
     });
 }
