@@ -55,7 +55,7 @@ function GenerateSidebar()
         section.entries.forEach(entry => {
             if(entry.display == "Home") // Im evil so making a specific thing instead of being smart
             { 
-                Sidebar.innerHTML += `<a href='/${entry.link}'>${entry.display}</a>`; 
+                Sidebar.innerHTML += `<a href='/'>${entry.display}</a>`; 
             }
             else
             {
