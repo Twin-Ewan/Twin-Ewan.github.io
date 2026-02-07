@@ -24,7 +24,7 @@ class Section {
 class Entry {    
     // My beautiful son overloading, dead
     constructor(display, link) {
-        if(!link && link != "")
+        if(!link)
         {
             this.display = display;
             this.link = display;
@@ -53,7 +53,14 @@ function GenerateSidebar()
         Sidebar.innerHTML += `<h5>${section.header}</h5>`;
 
         section.entries.forEach(entry => {
-            Sidebar.innerHTML += `<a href='/${entry.link}/'>${entry.display}</a>`; 
+            if(entry.display == "Home") // Im evil so making a specific thing instead of being smart
+            { 
+                Sidebar.innerHTML += `<a href='/${entry.link}'>${entry.display}</a>`; 
+            }
+            else
+            {
+                Sidebar.innerHTML += `<a href='/${entry.link}/'>${entry.display}</a>`; 
+            }
         });
     });
 }
