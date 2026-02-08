@@ -1,0 +1,10 @@
+---
+const { author, repo, extra } = Astro.props;
+let { display } = Astro.props;
+
+if(!display) display = repo;
+---
+
+<div class="repo">
+    <p>GitHub Repo: </p><a href=`https://github.com/${author}/${repo}`>{display}</a> {extra && <p>And </p> <a href=`${extra}`>Website</a>}
+</div>
