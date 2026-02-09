@@ -10,7 +10,7 @@ a, p {
     color: white;
 }
 
-code {
+p code {
     border: solid;
     border-color: #666;
     border-width: 1px;
@@ -60,10 +60,22 @@ code {
 }
 
 .project img {
-    max-width: 33%;
+    width: 33%;
+    max-width: 500px;
     padding: 10px;
 }
 
+.astro-code {
+    width: 33%;
+    max-width: 500px;
+    
+    height: 33%;
+    max-height: 400px;
+
+    padding: 5px 10px;
+    margin: 0px 10px;
+    font-size: smaller;
+}
 
 /* Sidebar */
 #sidebar {
@@ -89,11 +101,11 @@ code {
     padding: 8px 16px;
 }   
 
-#sidebar a:hover:not(#current) {
+#sidebar a:hover:not(.current) {
     background-color: #43324D;
 }
 
-#current {
+.current {
     background-color: #463958;
     text-decoration: none;
 
@@ -139,7 +151,15 @@ code {
         display: block;
     }
 
-    .inline {
-        display: inline;
+    .astro-code {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 5px 10px;
+        margin: 10px 0px;
+    }
+
+    .repo {
+        margin-left: -10px;
     }
 }

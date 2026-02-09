@@ -1,14 +1,23 @@
-<div id="sidebar">
+---
+const { page } = Astro.props;
+
+function IsCurrent(Anchor: string)
+{
+    return Anchor == page ? "current" : "undefined";
+}
+---
+
+<div id="sidebar" data-page = {page}>
     <h5>General</h5>
-    <a href="/">Home</a>
-    <a href="/Highlights/">Highlights</a>
-    <a href="/AboutMe/">About Me</a>
-    <a href="/Personal/">Personal Projects</a>
+    <a href="/" class:list={IsCurrent("Home")}>Home</a>
+    <a href="/Highlights/" class:list={IsCurrent("Highlights")}>Highlights</a>
+    <a href="/AboutMe/" class:list={IsCurrent("About Me")}>About Me</a>
+    <a href="/Personal/" class:list={IsCurrent("Personal Projects")}>Personal Projects</a>
 
     <h5>Education</h5>
-    <a href="/Year4/">Year 4</a>
-    <a href="/Year3/">Year 3</a>
-    <a href="/HND/">HND</a>
-    <a href="/HNC/">HNC</a>
-    <a href="/Highschool/">Highschool</a>
+    <a href="/Year4/" class:list={IsCurrent("Year 4")}>Year 4</a>
+    <a href="/Year3/" class:list={IsCurrent("Year 3")}>Year 3</a>
+    <a href="/HND/" class:list={IsCurrent("HND")}>HND</a>
+    <a href="/HNC/" class:list={IsCurrent("HNC")}>HNC</a>
+    <a href="/Highschool/" class:list={IsCurrent("Highschool")}>Highschool</a>
 </div>

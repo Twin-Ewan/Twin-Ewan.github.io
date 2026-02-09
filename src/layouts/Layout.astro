@@ -6,15 +6,15 @@ import Sidebar from "src/components/Sidebar.astro";
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="icon" href="/favicon.ico"/>
     	<link rel="stylesheet" type="text/css" href="/styles.css">
-		<meta name="generator" content={Astro.generator} />
+		<meta name="generator" content={Astro.generator}/>
 		<title>Portfolio - {page}</title>
 	</head>
 	<body>
-		<Sidebar></Sidebar>
+		<Sidebar page={page}></Sidebar>
 
 		<slot />
 	</body>

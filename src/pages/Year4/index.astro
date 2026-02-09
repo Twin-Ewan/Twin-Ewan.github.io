@@ -1,43 +1,57 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
+
+import { Code } from 'astro:components';
+import fs from 'node:fs';
+
+const PortFS = fs.readFileSync('public/portfolio.txt', 'utf8');
 ---
 
 <Layout page="Year 4">
 	<div class="project">
 		<h3>Portfolio: University Edition</h3>
 		<GitHub author="Twin-Ewan" repo="Twin-Ewan.github.io"></GitHub>
+		<div>
+			<p>
+				Truly, a long time overdue. I've been wanting to try to update my site with my university and personal projects and even more importantly to be 
+				mobile friendly. I had failed a few times previously but I finally saw success with a small trial run with the <a href="/Personal/#StatDataFixer">
+				minecraft stats datafixer site</a> and with the good timing of this module it all provided the perfect excuse - and importantly the time - to finally
+				act upon it.
+			</p>
 
-		<p> 
-			Truly, a long time overdue. I've been wanting to try to update my site with my university and personal projects and even more importantly to be 
-			mobile friendly. I had failed a few times previously but I finally saw success with a small trial run with the <a href="/Personal/#StatDataFixer">
-			minecraft stats datafixer site</a> and with the good timing of this module it all provided the perfect excuse - and importantly the time - to finally
-			act upon it.
-		</p>
+			<Code code={PortFS} lang="js" style="float: left;"/>
+			
+			<p>
+				This time I wanted to make everything a lot more modular: do away with the copy and pasted sections and create a script - because no PHP as GitHub pages
+				is static - to as automatically as possible setup the boilerplate things for me to leave the webpages to the bare minimum setup required to make them, 
+				and of course to avoid me forgetting to update every page when changing something.
+			</p>
 
-		<img src="/Portfolio Sidebar.png" style="float: left;"/>
-		
-		<p class="inline">
-			This time I wanted to make everything a lot more modular: do away with the copy and pasted sections and create a script - because no PHP as GitHub pages
-			is static - to as automatically as possible setup the boilerplate things for me to leave the webpages to the bare minimum setup required to make them, 
-			and of course to avoid me forgetting to update every page when changing something.
-		</p>
+			<p>
+				Originally I did this by using a script that automatically generated everthing for me: The sidebars were generated using two classes: <code>Entry</code> 
+				which had a display and a link field, though if there was no link was specificed it would default to using the display as such and <code>Sections</code> 
+				which contained all the entires for that section and a header. I did had to carve out a specific exception for the main page as I couldn't think of another way of doing it.
+			</p>
 
-		<p class="inline">
-			The sidebars are automatically generated using two classes: <code>Entry</code> which has a display and a link field, though if no link was 
-			specificed it would default to using the display as such and <code>Sections</code> which contains all the entires for that section and a header. I did had 
-			to carve out a specific exception for the main page as I couldn't think of another way of doing it.
-		</p>
+			<p>
+				I added a check to disable the link to the page that you're already on when intially creating it using <code>GetLocation()</code> function which gets the 
+				filepath, then grabs the last directory and reconstructs the unicode character code into its character - I.e %20 into <code>[Space]</code> - then all gets 
+				combined back together to then to be finally used to compare it to the link used to create that sidebar button.
+			</p>
 
-		<p class="inline">
-			I added a check to disable the link to the page that you're already on when intially creating it using <code>GetLocation()</code> function which gets the 
-			filepath, then grabs the last directory and reconstructs the unicode character code into its character - I.e %20 into <code>[Space]</code> - then all gets 
-			combined back together to then to be finally used to compare it to the link used to create that sidebar button.
-		</p>
-
-		<p>
-			I also made the favicon, style, viewport and the title automatically be added on load, for the title reusing the same <code>GetLocation()</code>. and as well
-			made the "GitHub Repo: [Repo Link]" text at the top of each project automatically gets "GitHub Repo:" preprends to the links. All in the name to make things easier.
-		</p>
+			<p>
+				I also made the favicon, style, viewport and the title automatically be added on load, for the title reusing the same <code>GetLocation()</code>. and as well
+				made the "GitHub Repo: [Repo Link]" text at the top of each project automatically gets "GitHub Repo:" preprends to the links. All in the name to make things easier.
+			</p>
+		</div>
+		<div>
+			<p>
+				After showing off my good work to my dear friends I was quickly informed that it was not "good work" and was an abomination: Requiring javascript for basic UI 
+				elements for such important things as naviagtion is awful for indexing for spiders and search engines meaning they won't be able to access any sub pages and are left
+				stranded on the main page, let alone the people who have javascript disabled. And secondly due to the javascript taking a moment to run it leaves those with javascript
+				enabled temporarily without the content and flashbangs them for a split second with the default theming. 
+			</p>
+		</div>
 	</div>
 </Layout>
