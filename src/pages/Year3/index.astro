@@ -1,6 +1,9 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
+
+import ImageGrid from 'src/components/ImageGrid.astro';
+import PDF from 'src/components/PDF.astro';
 ---
 
 <Layout page="Year 3">
@@ -8,11 +11,53 @@ import GitHub from 'src/components/GitHub.astro';
 		<h3>Games Preproduction/IP3: Puffy MacPuffer</h3>
 		<GitHub author="dylanusinggithub" repo="Puffy-McPuffer" extra="https://kokwithoutak.github.io"></GitHub>
 
-		<img src="/Puffy MacPuffer Menu.png" style="float: left;"/>
+		<a href="/Year3/PuffyTitle.png"><img src="/Year3/PuffyTitle.png" style="float: left;"/></a>
 
 		<p>
 			The real hightlight of this year. <a href="https://www.scottishopera.org.uk/pop-up-opera-2025/">Puffy MacPuffer</a> is an opera about the titular 
-			character Puffy a puffer boat and their adventure through the five Crabbit Canals. We initally started
+			character Puffy a puffer boat and their adventure through the five Crabbit Canals. We initally started with only a team of six: three programmers, 
+			one artist and two designers, though one had to unfortunetly leave after the first week. We met with out client, Ian Piercy, once every few weeks
+			for brain storming.
+		</p>
+
+		<p>
+			The first half of the year was spent in preproduction, the first few weeks was comming up with ideas and looking at the <a href="https://gcugames.itch.io/puffy-mcpuffers-grand-canal-adventure">
+			previous year's attempt</a>, we came up with with 3 ideas:
+		</p>
+
+		<div style="display:grid; grid-template-columns: 1fr 2fr;">
+			<PDF file="/Year3/PitchSlides.pdf"></PDF>	
+			<ImageGrid images={[`IP3Concept1.png`, `IP3Concept2.png`, `IP3Concept3.png`]} location="Year3"> </ImageGrid>
+		</div>
+
+		<a href="/Year3/IP3GyroTest.png"><img src="/Year3/IP3GyroTest.png" style="float: right; height:300px; width:150px"/></a>
+		<p>
+			Concept 1 was a point and click 2D scroller where you interact with the canals and they would give you objectives that would allow you to progress with some extra
+			goodies to ogle at when clicking on them.
+
+			Concept 2 was a variation of <a href="https://en.wikipedia.org/wiki/Pipe_Mania">Pipe Mania</a> where you're placing down sections of canals to guide Puffy around,
+			and they would win by going through X amount of pieces. Sometimes the board would have pre-placed titles to help or hinder the player, some levels would have a 
+			special mode making the player need to go through all the in addition to the usual requirement. And an alterntive mode for the board to be completely filled and
+			a path is created by rotating the pieces.
+
+			Concept 3 was a <a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon_Snap">Pokémon Snap</a>-esque game where you're on the clyde canal and are taking photos of the
+			landmarks, whenever you did this infomation would appear about that landmark, you would be scored on how well it was taken and if the object was intresting. All the photos
+			taken could then be viewed in a gallery. This game was to be more of a learning experiance similar to the original show itself.
+		</p>
+
+		<p>
+			For the Pokémon Snap idea I was so excited for it I went ahead and try and make a demo of the gyro controls we wanted. This was done by building an android app to then test,
+			though the idea was this was to end up being played on iPads due to - at the time - the increased usage of them in educational spaces. Sadly due to issues with gyrolock
+			and the more fundamental issue of it not working on WebGL (our target platform).
+		</p>	
+
+		<p>
+			Concept 2 and 3 were our favourties, especially concept 3 though we were apprehensive about concept 3's due to only having the one artist and only having a few months
+			to create it all, and the Lectures and client agreed so we went with concept 2 but were told to expand it.
+		</p>
+
+		<p>
+
 		</p>
 	</div>  
 </Layout>

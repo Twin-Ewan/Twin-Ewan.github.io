@@ -65,6 +65,16 @@ p code {
     padding: 10px;
 }
 
+.ImageGrid a img {
+    width: 300px;
+    min-width: 90%;
+}
+
+.PDF {
+    width: 300px;
+    min-width: 100%;
+}
+
 .astro-code {
     width: 33%;
     max-width: 500px;
@@ -76,6 +86,7 @@ p code {
     margin: 0px 10px;
     font-size: smaller;
 }
+
 
 /* Sidebar */
 #sidebar {
@@ -144,10 +155,15 @@ p code {
         padding: 10px 0px;
     }
 
+    .ImageGrid a img {
+        padding: 10px 5px;
+        min-width: 300px;
+    }
+
     .project p, .project h3 {
         padding: 0px;
         margin: 5px 0px;
-        
+
         display: block;
     }
 
