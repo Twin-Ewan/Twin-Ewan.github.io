@@ -2,14 +2,15 @@
 interface Props {
   images: string[];
   location: string;
+  link?: string;
 }
 
-const { images, location } = Astro.props;
+const { images, location, link } = Astro.props;
 ---
 
 <div class="ImageGrid" style="display:flex; overflow-x:auto">
     <slot/>
     {
-        images.map((image: string) => <a href={`/${location}/${image}`}><img src={`/${location}/${image}`}></a>)
+        images.map((image: string) => <a href={`/${location}/${image}`}><img src={`/${location}/ {link ? ${image} : ${link}}`}></a>)
     }
 </div>

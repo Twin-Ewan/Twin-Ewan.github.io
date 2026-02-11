@@ -1,0 +1,8 @@
+---
+import ImageGrid from "./ImageGrid.astro";
+
+const { PDFfile, images, location } = Astro.props;
+---
+
+<ImageGrid images={images} location={location} link={PDFfile}></ImageGrid>
+  
