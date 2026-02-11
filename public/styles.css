@@ -62,7 +62,7 @@ p code {
 .project img {
     width: 33%;
     max-width: 500px;
-    padding: 10px;
+    padding: 0px 10px;
 }
 
 .ImageGrid a img {
