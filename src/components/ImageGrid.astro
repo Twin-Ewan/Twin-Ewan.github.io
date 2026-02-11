@@ -11,11 +11,17 @@ function GetAnchorLink(image: String)
 {
   return  link ? link : image;
 }
+
+function GetAltText(image: String)
+{
+  return image.split(".")[0];
+}
 ---
 
 <div class="ImageGrid" style="display:flex; overflow-x:auto">
     <slot/>
     {
-        images.map((image: string) => <a href={`/${location}/${GetAnchorLink(image)}`}><img src={`/${location}/${image}`}></a>)
+        images.map((image: string) => <a href={`/${location}/${GetAnchorLink(image)}`}>
+          <img src={`/${location}/${image}`} alt={`/${location}/AltText/${GetAltText(image)}.txt`}></a>)
     }
 </div>

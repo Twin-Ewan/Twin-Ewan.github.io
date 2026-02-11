@@ -11,7 +11,7 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 		<h3>Games Preproduction/IP3: Puffy MacPuffer</h3>
 		<GitHub author="dylanusinggithub" repo="Puffy-McPuffer" extra="https://kokwithoutak.github.io"></GitHub>
 
-		<a href="/Year3/PuffyTitle.png"><img src="/Year3/PuffyTitle.png" style="float: left;"/></a>
+		<a href="/Year3/PuffyTitle.gif"><img src="/Year3/PuffyTitle.gif" style="float: left;" alt="/Year3/AltTitle/PuffyTitle.txt"/></a>
 
 		<p>
 			The real hightlight of this year. <a href="https://www.scottishopera.org.uk/pop-up-opera-2025/">Puffy MacPuffer</a> is an opera about the titular 
@@ -29,7 +29,7 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 			<ImageGrid location="Year3" images={[`IP3Concept1.png`, `IP3Concept2.png`, `IP3Concept3.png`]} link="PitchSlides.pdf"></ImageGrid>
 		</div>
 
-		<a href="/Year3/IP3GyroTest.png"><img src="/Year3/IP3GyroTest.png" style="float: right; height:300px; width:150px"/></a>
+		<a href="/Year3/IP3GyroTest.png"><img src="/Year3/IP3GyroTest.png" alt="/Year3/AltText/IP3GyroTest.txt" style="float: right; height:300px; width:150px"/></a>
 		<p>
 			Concept 1 was a point and click 2D scroller where you interact with the canals and they would give you objectives that would allow you to progress with some extra
 			goodies to ogle at when clicking on them.
@@ -46,17 +46,18 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 
 		<p>
 			For the Pokémon Snap idea I was so excited for it I went ahead and try and make a demo of the gyro controls we wanted. This was done by building an android app to then test,
-			though the idea was this was to end up being played on iPads due to - at the time - the increased usage of them in educational spaces. Sadly due to issues with gyrolock
-			and the more fundamental issue of it not working on WebGL (our target platform).
+			though the idea was this was to end up being played on iPads due to - at the time - the increased usage of them in educational spaces. Sadly due to issues with <a href="https://en.wikipedia.org/wiki/Gimbal_lock">
+			gimbal lock</a>, drift and the more fundamental issue of it not working on WebGL (our target platform).
 		</p>	
 
 		<p>
 			Concept 2 and 3 were our favourties, especially concept 3 though we were apprehensive about concept 3's due to only having the one artist and only having a few months
 			to create it all, and the Lectures and client agreed so we went with concept 2 but were told to expand it.
 		</p>
-
 		<p>
-
+			After that meeting we planned to see Ian at his studio for a brainstorming session the following day, where we ended up landing on the idea of a minigame collection; we'd
+			keep Pipe Mania and make it about 10s long per level and add harder variations of that and another minigame I came up with based upon the hectic waters that form whilst going up a lock.
 		</p>
+
 	</div>  
 </Layout>
