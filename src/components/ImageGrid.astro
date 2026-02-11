@@ -16,6 +16,6 @@ function GetAnchorLink(image: String)
 <div class="ImageGrid" style="display:flex; overflow-x:auto">
     <slot/>
     {
-        images.map((image: string) => <a href={`/${location}/${GetAnchorLink(image)} }`}><img src={`/${location}/${image}`}></a>)
+        images.map((image: string) => <a href={`/${location}/${GetAnchorLink(image)}`}><img src={`/${location}/${image}`}></a>)
     }
 </div>
