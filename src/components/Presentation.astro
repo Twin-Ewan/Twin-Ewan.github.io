@@ -1,0 +1,10 @@
+---
+import PDF from "src/components/PDF.astro";
+import ImageGrid from "./ImageGrid.astro";
+
+const { PDFfile, images, location } = Astro.props;
+---
+
+<PDF file={`${location}/${PDFfile}`} fallback="True">
+  <ImageGrid images={images} location={location}></ImageGrid>
+</PDF>
