@@ -6,11 +6,16 @@ interface Props {
 }
 
 const { images, location, link } = Astro.props;
+
+function GetAnchorLink(image: String)
+{
+  return  link ? link : image;
+}
 ---
 
 <div class="ImageGrid" style="display:flex; overflow-x:auto">
     <slot/>
     {
-        images.map((image: string) => <a href={`/${location}/ {${link} ? ${link} : ${image}}`}><img src={`/${location}/${image}`}></a>)
+        images.map((image: string) => <a href={`/${location}/${GetAnchorLink(image)} }`}><img src={`/${location}/${image}`}></a>)
     }
 </div>
