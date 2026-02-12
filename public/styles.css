@@ -65,9 +65,16 @@ p code {
     padding: 0px 10px;
 }
 
+.ImageGrid {
+    display:flex; 
+    overflow-x:auto;
+    justify-content: center;
+    align-items: center;
+}
+
 .ImageGrid a img {
-    width: 300px;
     min-width: 90%;
+    margin: auto;
 }
 
 .PDF {
@@ -159,9 +166,14 @@ p code {
         padding: 10px 0px;
     }
 
+    .ImageGrid {
+        justify-content: left;
+    }
+
     .ImageGrid a img {
         padding: 10px 5px;
         min-width: 300px;
+        width: 90%;
     }
 
     .project p, .project h3 {

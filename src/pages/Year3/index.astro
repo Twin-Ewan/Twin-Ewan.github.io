@@ -2,7 +2,6 @@
 import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
 
-import PDF from 'src/components/PDF.astro';
 import ImageGrid from 'src/components/ImageGrid.astro';
 ---
 
@@ -29,7 +28,7 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 			<ImageGrid location="Year3" images={[`IP3Concept1.png`, `IP3Concept2.png`, `IP3Concept3.png`]} link="PitchSlides.pdf"></ImageGrid>
 		</div>
 
-		<a href="/Year3/IP3GyroTest.png"><img src="/Year3/IP3GyroTest.png" alt="/Year3/AltText/IP3GyroTest.txt" style="float: right; height:300px; width:150px"/></a>
+		<a href="/Year3/IP3GyroTest.png"><img src="/Year3/IP3GyroTest.png" alt=["/Year3/AltText/IP3GyroTest.txt"] style="float: right; height:300px; width:150px"/></a>
 		<p>
 			Concept 1 was a point and click 2D scroller where you interact with the canals and they would give you objectives that would allow you to progress with some extra
 			goodies to ogle at when clicking on them.
@@ -56,7 +55,33 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 		</p>
 		<p>
 			After that meeting we planned to see Ian at his studio for a brainstorming session the following day, where we ended up landing on the idea of a minigame collection; we'd
-			keep Pipe Mania and make it about 10s long per level and add harder variations of that and another minigame I came up with based upon the hectic waters that form whilst going up a lock.
+			keep Pipe Mania and make it about 10 seconds long per level and add harder variations of that and another minigame I came up with based upon the hectic waters that form whilst 
+			going up a lock.
+		</p>
+
+		<p>
+			How we worked initally in preproduction was each developer was in charge of a minigame: I had Lock Balance, Dylan had Pipe Mania and Jack had Canal Crusier, though we did of course
+			still help each other whenever needed either during our weekly meetings in class or the odd message on Discord, like when I converted the old movement in Canal Crusier to no longer
+			be lane based and work with unity's control system for added support.
+		</p>
+
+		<ImageGrid images={[`PuffyLockBalance1.gif`, `PuffyLockBalance2.gif`, `PuffyLockBalance3.gif`]} location="Year3"></ImageGrid>
+
+		<p>
+			I started work on the first minigame Lock Balance, or at the time called "Canal Balance", I made the boat move using one dimensional perlin noise, one for X, Y and rotation, for 
+			some smooth randomness that was easily controllable. Originally it was a top down view hence the equal vertical movement but due to perception issues during a demonstration this 
+			was quickly changed to a side-on view.
+		</p>
+
+		<p>
+			This was quickly followed with an indicator for the water's direction (which weirdly got turned into being wind instead?), a stun system for losing control breifly once hit, a short 
+			"Mario Party-esque intro cutscene" of puffy entering the lock and centring himself, the ability to actually lose by crashing into the sides and incredibly important a falling objects 
+			system for Puffy to collect and dodge to fit in with  the new win condiditon which was score based instead of the old system of having to survive X amount of seconds. 
+		</p>
+
+		<p>
+			Inbetween doing that I created a website to allow us to quickly test builds due to WebGL builds requiring to be ran on a server as well 
+			to be able to showcase the progress to the client and lecutres easier using github pages which honestly was such an useful tool that I'll be hopefully be using a lot going forward.
 		</p>
 
 	</div>  
