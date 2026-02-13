@@ -1,0 +1,49 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import GitHub from 'src/components/GitHub.astro';
+---
+
+<Layout page="Personal Projects">
+    <div class="project">
+        <h3>Minecraft Statistics DataFixer</h3>
+        <GitHub author="Twin-Ewan" repo="MinecraftStatsDataFixer" extra="https://twin-ewan.github.io/MinecraftStatsDataFixer/build/"></GitHub>
+
+        <a href="/Personal/MCStats.png"><img src="/Personal/MCStats.png" style="float: left;" alt="/Personal/AltTitle/MCStats.txt"/></a>
+
+        <p>
+            This was initally conceived due to the work I had been doing research for Dual Stats Files DF where you can have both a <code>[username]</code> and a <code>UUID</code> file at the 
+            same time and during it I noticed how many times there were issues with statistics, no doubt due to their perceived unimportance in devlopment besides their inital implimentation.
+        </p>
+
+        <p>
+            Initally I started with <a href="https://mcdf.wiki.gg/wiki/Java_Edition:Tutorials/Potentially_Dangerous_Versions?oldid=73652">the existing PDVs for statistics</a> at the time which were
+        </p>
+
+        <div style="display: inline-block">
+            <ul class="footnote">
+                <li> The Flattening format change.<a id="ref-Flattening" href="#foot-Flattening"><sup>1</sup></a> </li>
+                <li> The Flattening spawn eggs & terracotta stats.<a id="ref-Flattening-Items" href="#foot-Flattening-Items"><sup>2</sup></a> </li>
+                <li> 1.13-pre5 entity changes and the short grass ID changing from. </li>
+                <li> Short Grass ID changes. </li>
+            </ul>
+
+            <ol class="footnote">
+                <li id="foot-Flattening"><a href="#ref-Flattening">The original bug said entities statistics don't work in 17w47a this is wrong and they do not upgrade from old versions 
+                    until 1.13-pre3</a></li>
+                <li id="foot-Flattening-Items"><a href="#ref-Flattening-Items">This is actually the same bug as above.</a></li>
+            </ol>
+        </div>
+
+        <p>
+            
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Minecraft Discontinued Features Timeline</h3>
+        <GitHub author="Twin-Ewan" repo="MCDF-DF-Timeline" extra="https://twin-ewan.github.io/MCDF-DF-Timeline/src/website/"></GitHub>
+
+        <a href="/Personal/MCTimeline.png"><img src="/Personal/MCTimeline.png" style="float: left;" alt="/Personal/AltTitle/MCTimeline.txt"/></a>
+
+    </div>
+</Layout>

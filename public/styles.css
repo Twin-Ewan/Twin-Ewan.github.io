@@ -22,8 +22,9 @@ p code {
 }
 
 .project {
-    margin-left: 11%;
+    margin: 25px 10px 25px 11%;
     padding: 2px;
+    
 
     box-shadow: 2px 2px #39273B;
     background: #3F2B41;
@@ -63,6 +64,10 @@ p code {
     width: 33%;
     max-width: 500px;
     padding: 0px 10px;
+}
+
+.footnote li a{
+    text-decoration: none;
 }
 
 .ImageGrid {
