@@ -1,1 +1,0 @@
-A small pill-shapped object rotated in front of the Unity default background. Text above and below read "Disabled" and "(36.52, 35.37, 2.38)" respectively.

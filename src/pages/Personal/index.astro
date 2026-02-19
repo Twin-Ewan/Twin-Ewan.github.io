@@ -1,6 +1,8 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
+
+import MediaElement from 'src/components/MediaElement.astro';
 ---
 
 <Layout page="Personal Projects">
@@ -8,7 +10,8 @@ import GitHub from 'src/components/GitHub.astro';
         <h3>Minecraft Statistics DataFixer</h3>
         <GitHub author="Twin-Ewan" repo="MinecraftStatsDataFixer" extra="https://twin-ewan.github.io/MinecraftStatsDataFixer/build/"></GitHub>
 
-        <a href="/Personal/MCStats.png"><img src="/Personal/MCStats.png" style="float: left;" alt="/Personal/AltTitle/MCStats.txt"/></a>
+        <MediaElement media="MCStats.png" location="Personal/Stats" type="img" style="float:left"></MediaElement>
+        <MediaElement media="BlockIDs.png" location="Personal/Stats" type="img" style="float:right"></MediaElement>
 
         <p>
             This was initally conceived due to the work I had been doing research for Dual Stats Files DF where you can have both a <code>[username]</code> and a <code>UUID</code> file at the 
@@ -16,14 +19,30 @@ import GitHub from 'src/components/GitHub.astro';
         </p>
 
         <p>
-            Initally I started with <a href="https://mcdf.wiki.gg/wiki/Java_Edition:Tutorials/Potentially_Dangerous_Versions?oldid=73652">the existing PDVs for statistics</a> at the time which were
+            I started with some of the issues I already knew about: unlit redstone torch ID instead of lit in 13w36a/b (1.7.2), namespace IDs after 14w06a (1.8) and the before and after of the
+            entity renamings in 16w32a (1.11). These all were incredibly simple with it just being a simple replace though progressively getting harder: redstone torch ID from 75 to 76, the
+            namespace IDs I used their numerical ID - I.e <code>#0003</code> to <code>minecraft:dirt</code> - as an index into the block and item array.
+        </p>
+
+        <p>
+            There is 3 seperate arrays, block ID array that has every block up to ID 177: wall_banner, this is because the IDs around this region are very sporadic so I had to include many unnecessary
+            blocks that get added much later (Prismarine and sea lanterns, namely in 14w25a) as well as ones you cannot normally get like flowing_water.
+        </p>
+
+        <p>
+            An array of item IDs which were thankfully more sensibly laid out though the armour stand ID is earlier on due that previously being the horse saddle item which then got removed.
+            and lastly an array specifically for music discs due to them using their own ID system that starts at 2256. All of these a pain to manually write but the final system works great.
+        </p>
+
+        <p>
+            Initally looked at <a href="https://mcdf.wiki.gg/wiki/Java_Edition:Tutorials/Potentially_Dangerous_Versions?oldid=73652">the existing PDVs for statistics</a> at the time which were
         </p>
 
         <div style="display: inline-block">
             <ul class="footnote">
                 <li> The Flattening format change.<a id="ref-Flattening" href="#foot-Flattening"><sup>1</sup></a> </li>
                 <li> The Flattening spawn eggs & terracotta stats.<a id="ref-Flattening-Items" href="#foot-Flattening-Items"><sup>2</sup></a> </li>
-                <li> 1.13-pre5 entity changes and the short grass ID changing from. </li>
+                <li> 1.13-pre5 entity changes. </li>
                 <li> Short Grass ID changes. </li>
             </ul>
 
@@ -33,17 +52,13 @@ import GitHub from 'src/components/GitHub.astro';
                 <li id="foot-Flattening-Items"><a href="#ref-Flattening-Items">This is actually the same bug as above.</a></li>
             </ol>
         </div>
-
-        <p>
-            
-        </p>
     </div>
 
     <div class="project">
         <h3>Minecraft Discontinued Features Timeline</h3>
         <GitHub author="Twin-Ewan" repo="MCDF-DF-Timeline" extra="https://twin-ewan.github.io/MCDF-DF-Timeline/src/website/"></GitHub>
 
-        <a href="/Personal/MCTimeline.png"><img src="/Personal/MCTimeline.png" style="float: left;" alt="/Personal/AltTitle/MCTimeline.txt"/></a>
+        <MediaElement media="MCTimeline.png" location="Personal/Timeline" type="img" style="float:left"></MediaElement>
 
     </div>
 </Layout>

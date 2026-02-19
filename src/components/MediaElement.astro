@@ -1,0 +1,59 @@
+---
+import { Debug } from "astro:components";
+import fs from 'node:fs';
+
+interface Props {
+  media: string;
+  type: string;
+  location: string;
+  style?: string;
+  link?: string;
+}
+
+const { media, type, location, style, link } = Astro.props;
+
+function GetAnchorLink(Media: String)
+{
+  return  link ? link : Media;
+}   
+
+function GetElementType()
+{
+    let HTMLElement = `<${type} `;
+
+    switch(type)
+    {
+        case "img":
+        {
+            HTMLElement += `src="/${location}/${media}" alt='${GetAltText(media)}' style="${style}">`;
+        }
+        break;
+
+        case "iframe":
+        {
+            HTMLElement += `src="${location}/${media}">`;
+        }
+        break;  
+    }
+
+    HTMLElement += `</${type}>`;
+    return HTMLElement;
+}
+
+function GetAltText(Media: String)
+{
+    let AltText;
+    try 
+    {
+        AltText = fs.readFileSync(`public/${location}/AltText/${Media.split(".")[0]}.txt`, 'utf8');
+    } 
+    catch(err)
+    {
+        AltText = "";
+    }
+    
+    return AltText;
+}
+---
+
+<a href={`/${location}/${GetAnchorLink(media)}`}><Fragment set:html={GetElementType()}/></a>

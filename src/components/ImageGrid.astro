@@ -1,4 +1,6 @@
 ---
+import MediaElement from "src/components/MediaElement.astro";
+
 interface Props {
   images: string[];
   location: string;
@@ -21,7 +23,6 @@ function GetAltText(image: String)
 <div class="ImageGrid">
     <slot/>
     {
-        images.map((image: string) => <a href={`/${location}/${GetAnchorLink(image)}`}>
-          <img src={`/${location}/${image}`} alt={`/${location}/AltText/${GetAltText(image)}.txt`}></a>)
+        images.map((image: string) => <MediaElement media={image} location={location} link={link} type="img"></MediaElement>)
     }
 </div>

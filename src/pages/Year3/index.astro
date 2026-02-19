@@ -2,6 +2,7 @@
 import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
 
+import MediaElement from 'src/components/MediaElement.astro';
 import ImageGrid from 'src/components/ImageGrid.astro';
 ---
 
@@ -10,7 +11,7 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 		<h3>Games Preproduction/IP3: Puffy MacPuffer</h3>
 		<GitHub author="dylanusinggithub" repo="Puffy-McPuffer" extra="https://kokwithoutak.github.io"></GitHub>
 
-		<a href="/Year3/PuffyTitle.gif"><img src="/Year3/PuffyTitle.gif" style="float: left;" alt="/Year3/AltTitle/PuffyTitle.txt"/></a>
+        <MediaElement media="PuffyTitle.gif" location="Year3" type="img" style="float:left"></MediaElement>
 
 		<p>
 			The real hightlight of this year. <a href="https://www.scottishopera.org.uk/pop-up-opera-2025/">Puffy MacPuffer</a> is an opera about the titular 
@@ -19,16 +20,17 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 			for brain storming.
 		</p>
 
+		<h4>Preproduction: Week 1 - 4</h4>
 		<p>
 			The first half of the year was spent in preproduction, the first few weeks was comming up with ideas and looking at the <a href="https://gcugames.itch.io/puffy-mcpuffers-grand-canal-adventure">
 			previous year's attempt</a>, we came up with with 3 ideas:
 		</p>
 
 		<div id="PuffyPitch">
-			<ImageGrid location="Year3" images={[`IP3Concept1.png`, `IP3Concept2.png`, `IP3Concept3.png`]} link="PitchSlides.pdf"></ImageGrid>
+			<ImageGrid location="Year3/IP3" images={[`Concept1.png`, `Concept2.png`, `Concept3.png`]} link="PitchSlides.pdf"></ImageGrid>
 		</div>
 
-		<a href="/Year3/IP3GyroTest.png"><img src="/Year3/IP3GyroTest.png" alt=["/Year3/AltText/IP3GyroTest.txt"] style="float: right; height:300px; width:150px"/></a>
+		<MediaElement media="GyroTest.png" location='Year3/IP3' type='img' style='float: right; height:300px; width:150px'></MediaElement>
 		<p>
 			Concept 1 was a point and click 2D scroller where you interact with the canals and they would give you objectives that would allow you to progress with some extra
 			goodies to ogle at when clicking on them.
@@ -65,7 +67,10 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 			be lane based and work with unity's control system for added support.
 		</p>
 
-		<ImageGrid images={[`PuffyLockBalance1.gif`, `PuffyLockBalance2.gif`, `PuffyLockBalance3.gif`]} location="Year3"></ImageGrid>
+		
+		<h4>Lock Balance: Week 5 - 9</h4>
+
+		<ImageGrid images={[`LockBalance1.gif`, `LockBalance2.gif`, `LockBalance3.gif`]} location="Year3/IP3"></ImageGrid>
 
 		<p>
 			I started work on the first minigame Lock Balance, or at the time called "Canal Balance", I made the boat move using one dimensional perlin noise, one for X, Y and rotation, for 
@@ -74,9 +79,9 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 		</p>
 
 		<p>
-			This was quickly followed up in the next 2 weeks with an indicator for the water's direction (which weirdly got turned into being wind instead?), a stun system for losing control breifly once hit, a short 
-			"Mario Party-esque intro cutscene" of puffy entering the lock and centring himself, the ability to actually lose by crashing into the sides and incredibly important a falling objects 
-			system for Puffy to collect and dodge to fit in with  the new win condiditon which was score based instead of the old system of having to survive X amount of seconds. 
+			This was quickly followed up in the next 2 weeks with an indicator for the water's direction (which weirdly got turned into being wind instead?), a stun system for losing control breifly once hit, 
+			a short "Mario Party-esque intro cutscene" of puffy exiting the lock, the ability to actually lose by crashing into the sides and incredibly important a falling objects 
+			system for Puffy to collect and dodge to fit in with the new win condiditon suggest by Iain which was score based instead of the old system of having to survive X amount of seconds. 
 		</p>
 
 		<p>
@@ -84,9 +89,30 @@ import ImageGrid from 'src/components/ImageGrid.astro';
 			being able to showcase the progress to the client and lecutres easier. All of which was such an useful tool that I'll be 100% using some similar process for any future projects going forward.
 		</p>
 
+		<h4>Canal Cruiser: Week 9.5 - 11</h4>
 		<p>
-			At this point we were at week 10 of 12 and we had the final vertical slice presention due so I ended picking up some slack from the Canal Cruiser minigame due to it lagging behind slightly.
-			I started with one of the feedback we got from the lecturers to change its movement from lane-based to more be free, 
+			At this point we were at week 10 of 12 and we had our prototype presentation as well as a group playtest shortly after, both went well I implemented some of the feedback just in time for the
+			playtest. I most focused on Canal Crusier due to it lagging behind slightly compared to the other games, I changed the movement from lane-based to more be free, rotate it to make it less 
+			squished, added mouse controls for it to work on mobile as for accessability, changing the win condiditon to be collection based instead of survival, made the cargo appear behind Puffy in a chain
+			as well as changing it from hinges to distance joints which finally got rid of the weird stretching on the boxes, damage flashes, and made it a lot faster.
+		</p>
+
+		<ImageGrid images={[`CanalCruiser1.gif`, `CanalCruiser2.gif`, `CanalCruiser3.gif`]} location="Year3/IP3"></ImageGrid>
+
+		<h4>Last Minute Touches: Week 12</h4>
+		<MediaElement media="LockBalance4.gif" location='Year3/IP3' type='img' style='float:left'></MediaElement>
+		<!-- <MediaElement media="aFeCcpqL75Y" location='https://youtube.com/embed' type='iframe'></MediaElement> -->
+
+		<p>
+			After the playtest I went back to impliment some feedback we got about Lock Balance: It being too unforgiving and remove the randomness, or as it was said "let the designers do their job and
+			let the designers make the level." So I changed the indicator from a windsock to an arrow, added damage flashes similar to Canal Cruiser, changed it so Puffy could hit the lock walls multiple 
+			times shown with a small health bar the bottom left instead of dying instantly and changed the objects to be layout based where it would drop prefabs of layouts, allowing the designers to change the
+			fequency of the drops and the time it takes before the objects would drop, as well adding a very nice touch where when the objects hit the water they slowly sink towards the ground and animation of
+			Puffy entering the lock to give the player time to prepare.
+		</p>
+
+		<p>
+			As well we made a final vertical slice presention for the very end as well as a trailer
 		</p>
 
 	</div>  
