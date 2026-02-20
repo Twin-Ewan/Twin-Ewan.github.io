@@ -9,8 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^9.5.4",
-    "astro": "^5.17.1",
-    "node": "^25.6.1"
+    "astro": "^5.17.1"
   }
 }
