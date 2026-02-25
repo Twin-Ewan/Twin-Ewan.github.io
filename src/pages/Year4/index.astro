@@ -1,11 +1,7 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
-
-import { Code } from 'astro:components';
-import fs from 'node:fs';
-
-const PortFS = fs.readFileSync('public/Year4/portfolio.txt', 'utf8');
+import CodeBlock from 'src/components/CodeBlock.astro';
 ---
 
 <Layout page="Year 4">
@@ -19,7 +15,7 @@ const PortFS = fs.readFileSync('public/Year4/portfolio.txt', 'utf8');
 			act upon it.
 		</p>
 
-		<Code code={PortFS} lang="js" style="float: left;"/>
+		<CodeBlock path="public/Year4/Portfolio.txt" lang="JS" style='float:left'></CodeBlock>
 		
 		<p>
 			This time I wanted to make everything a lot more modular: do away with the copy and pasted sections and create a script - because no PHP as GitHub pages

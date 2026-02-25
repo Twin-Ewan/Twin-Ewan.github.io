@@ -70,6 +70,10 @@ p code {
     text-decoration: none;
 }
 
+iframe {
+    border-color: #39273B;
+}
+
 .ImageGrid {
     display:flex; 
     overflow-x:auto;

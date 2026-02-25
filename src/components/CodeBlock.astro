@@ -1,0 +1,17 @@
+---
+interface Props {
+    path: string;
+    lang: string;
+    style?: string;
+}
+
+const { path, lang, style } = Astro.props;
+
+import { Code } from 'astro:components';
+import fs from 'node:fs';
+
+const File = fs.readFileSync(path, 'utf8');
+---
+
+
+<Code code={File} lang={lang} style={style}/>

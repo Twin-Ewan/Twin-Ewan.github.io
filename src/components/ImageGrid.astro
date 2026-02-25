@@ -21,8 +21,8 @@ function GetAltText(image: String)
 ---
 
 <div class="ImageGrid">
-    <slot/>
-    {
-        images.map((image: string) => <MediaElement media={image} location={location} link={link} type="img"></MediaElement>)
-    }
+  <slot />
+  {
+    images.map((image: string) => <MediaElement media={image} location={location} link={link} type="img"></MediaElement>)
+  }
 </div>

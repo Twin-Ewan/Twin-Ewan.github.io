@@ -25,17 +25,18 @@ function GetElementType()
     {
         case "img":
         {
-            HTMLElement += `src="/${location}/${media}" alt='${GetAltText(media)}' style="${style}">`;
+            HTMLElement += `src="/${location}/${media}" alt='${GetAltText(media)}'`;
         }
         break;
 
         case "iframe":
         {
-            HTMLElement += `src="${location}/${media}">`;
+            HTMLElement += `src="${location}/${media}"`;
         }
         break;  
     }
 
+    HTMLElement += `style="${style}">`;
     HTMLElement += `</${type}>`;
     return HTMLElement;
 }
