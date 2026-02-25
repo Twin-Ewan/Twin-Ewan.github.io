@@ -1,11 +1,11 @@
 ---
 interface Props {
     path: string;
-    lang: string;
+    language: any;
     style?: string;
 }
 
-const { path, lang, style } = Astro.props;
+const { path, language, style } = Astro.props;
 
 import { Code } from 'astro:components';
 import fs from 'node:fs';
@@ -13,5 +13,4 @@ import fs from 'node:fs';
 const File = fs.readFileSync(path, 'utf8');
 ---
 
-
-<Code code={File} lang={lang} style={style}/>
+<Code code={File} lang={language} style={style}/>
