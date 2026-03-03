@@ -108,8 +108,7 @@ iframe {
 #sidebar {
     width: 10%;
     margin: 0px;
-    margin-top: 10px;
-    position: absolute;
+    position: fixed;
 
     box-shadow: 2px 2px #39273B;
     background: #3F2B41;
@@ -147,6 +146,8 @@ iframe {
     #sidebar {
         width: 100%;
         display: grid;
+        position: static;
+
         grid-template-columns: repeat(5, auto);
         place-items: center;
     }
