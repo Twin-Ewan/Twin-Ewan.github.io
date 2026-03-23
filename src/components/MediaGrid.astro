@@ -6,9 +6,10 @@ interface Props {
   location: string;
   type: string;
   link?: string;
+  style?: string;
 }
 
-const { media, location, link, type } = Astro.props;
+const { media, location, link, type, style } = Astro.props;
 
 function GetAnchorLink(item: String)
 {
@@ -21,7 +22,7 @@ function GetAltText(item: String)
 }
 ---
 
-<div class="MediaGrid">
+<div class="MediaGrid" style={style}>
   <slot />
   {
     media.map((item: string) => <MediaElement media={item} location={location} link={link} type={type} ID="GridElement"></MediaElement>)

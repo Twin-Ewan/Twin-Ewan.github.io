@@ -20,20 +20,18 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 			no points for guessing what that was about, and the main meat of IP3 where we devloped the game.
 		</p>
 		<p>
-			We initally started in IP3 with only a team of six: three programmers, one artist and two designers, though one of the designers had to unfortunetly 
+			We initially started in IP3 with only a team of six: three programmers, one artist and two designers, though one of the designers had to unfortunetly 
 			leave after the first few weeks. We met with out client, Ian Piercy, once every few weeks for brain storming and to update him on the progress.
 		</p>
 
 		<h4>Preproduction: Week 1 - 4</h4>
 		<p>
-			The first few weeks was comming up with ideas and looking at the <a href="https://gcugames.itch.io/puffy-mcpuffers-grand-canal-adventure">
+			The first few weeks was coming up with ideas and looking at the <a href="https://gcugames.itch.io/puffy-mcpuffers-grand-canal-adventure">
 			previous year's team attempt</a> given the specifications we got in our inital brief: We were to make a game for 4-7yrs for the web, that were 1-3 minutes
 			of gameplay per "section". we came up with with 3 ideas:
 		</p>
 
-		<div id="PuffyPitch">
-			<MediaGrid location="Year3/IP3" media={[`Concept1.png`, `Concept2.png`, `Concept3.png`]} link="PitchSlides.pdf" type='img'></MediaGrid>
-		</div>
+		<MediaGrid location="Year3/IP3" media={[`Concept1.png`, `Concept2.png`, `Concept3.png`]} link="PitchSlides.pdf" type='img' style="width:100%"></MediaGrid>
 
 		<MediaElement media="GyroTest.png" location='Year3/IP3' type='img' style='float: right; height:300px; width:150px'></MediaElement>
 
@@ -49,15 +47,15 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 			</li>
 			<li>
 				Concept 3, a <a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon_Snap">Pokémon Snap</a>-esque game where the player would take photos of the various landmarks 
-				and other scenery on the clyde and other nearby canals. Whenever the player took a valid photo infomation would appear about the subject and then they would be 
-				then scored on how well it was taken and if the objectwas intresting. All the photos taken could then be saved to be viewed in a gallery. The game was to be 
+				and other scenery on the clyde and other nearby canals. Whenever the player took a valid photo information would appear about the subject and then they would be 
+				then scored on how well it was taken and if the objectwas interesting. All the photos taken could then be saved to be viewed in a gallery. The game was to be 
 				more of a learning "Edu-tainment" experience, similar to the original show.
 			</li>
 		</ul>
 
 		<p>
-			For the Pokémon Snap idea I was so excited for it I went ahead and tried to make a demo of the gyro control. The idea being, due to the recent-ish scheme by the scottish
-			goverment to give iPads to students we could use that to enhance our game and have a fun, memorable gimmeck. Though, sadly due to issues with 
+			For the Pokémon Snap idea I was so excited for it I went ahead and tried to make a demo of the gyro control. The idea being, due to the recent-ish scheme by the Scottish
+			government to give iPads to students we could use that to enhance our game and have a fun, memorable gimmick. Though, sadly due to issues with 
 			<a href="https://en.wikipedia.org/wiki/Gimbal_lock"> gimbal lock</a>, drift and the more fundamental issue of it not being supported on Unity's WebGL compiler, I had to
 			shelf it.
 		</p>	
@@ -73,7 +71,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 		</p>
 
 		<p>
-			How we worked initally in preproduction was each developer was in charge of a minigame: I had Lock Balance, Dylan had Pipe Mania and Jack had Canal Crusier, though we did of course
+			How we worked initially in preproduction was each developer was in charge of a minigame: I had Lock Balance, Dylan had Pipe Mania and Jack had Canal Crusier, though we did of course
 			still help each other whenever needed, either during our weekly meetings at the university or with the odd message on Discord
 		</p>
 
@@ -82,20 +80,20 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 		<MediaGrid media={[`LockBalance1.gif`, `LockBalance2.gif`, `LockBalance3.gif`]} location="Year3/IP3" type="img"></MediaGrid>
 
 		<p>
-			I started work on the first minigame Lock Balance, or at the time called "Canal Balance", I made the boat be pushed around using one dimensional perlin noise, one for each axes and 
-			another for rotation, as it was some smooth randomness that was easily controllable for the designers to play with. Originally the game was played from a top down view but due to 
+			I started work on the first minigame Lock Balance, or at the time called "Canal Balance", I made the boat be pushed around using one-dimensional perlin noise, one for each axis and 
+			another for rotation, as it was some smooth randomness that was easily controllable for the designers to play with. Originally the game was played from a top-down view but due to 
 			perception issues during a demonstration in class of the progress this was quickly changed to a side-on view instead.
 		</p>
 
 		<p>
 			This was quickly followed up in the next 2 weeks with an indicator for the water's direction (which eventually got misconstrued into being wind?), a stun system to disable player input
 			breifly when hit, a short transtion cutscene of puffy exiting the top of the lock, the ability to actually lose by crashing into the sides and most importantly of all falling objects 
-			system for Puffy to collect and dodge to fit in with the new win condiditon suggest by Iain instead of the old system of having to survive an amount of seconds as the water rised to leave. 
+			system for Puffy to collect and dodge to fit in with the new win condition suggest by Iain instead of the old system of having to survive an amount of seconds as the water rised to leave. 
 		</p>
 
 		<p>
-			Inbetween doing all of that I created a website to allow us to quickly test builds using github pages with an autodeployer due to the WebGL builds requiring a server to be ran on, though
-			all of this came with the added bonus of being able to showcase the progress to the client and lecutres incredibly easily. Which was such an useful tool that I'll be 100% using a similar 
+			Inbetween doing all of that I created a website to allow us to quickly test builds using GitHub pages with an autodeployer due to the WebGL builds requiring a server to be ran on, though
+			all of this came with the added bonus of being able to showcase the progress to the client and lecutres incredibly easily. Which was such a useful tool that I'll be 100% using a similar 
 			process for any future projects going forward.
 		</p>
 
@@ -111,7 +109,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 		<p>
 			After the presentation we focused on acting upon the feedback we got, I mostly focused on Canal Crusier due to it lagging behind slightly compared to the other games. I changed the movement from 
 			lane-based to be completely free by borrowing my movement function from Lock Balance, rotated the playfield to make the obstacles from top to bottom to instead be right to left, added mouse 
-			controls to steer Puffy for mobile support for parity with our other minigames and for bonus accessability, changed the win condiditon to be collecting creates based instead of surviving for a
+			controls to steer Puffy for mobile support for parity with our other minigames and for bonus accessibility, changed the win condition to be collecting creates based instead of surviving for a
 			period of time and made the cargo dynamically add and remove itself behind Puffy when the player do collects them or get hurt by a obstacle instead of constantly having 3 as a quasi-life metre,
 			changed the rope from being based on hinges to distance joints which finally got rid of the cargo stretching issue that was plaguing any showcase after playing for a short while, 
 			make Puffy flash when damaged, and made the game overall a lot faster.
@@ -124,7 +122,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 
 		<p>
 			We finally had our big playtest and it was mixed; we only had a small handful of people play the game, and even less so once the rest of the team had to leave and I was alone... but! the feedback 
-			we did get was very useful and it was very intresting to see where everyone else was at with their own projects, and of course I couldn't help myself and was trying to help them fix some issues .
+			we did get was very useful and it was very interesting to see where everyone else was at with their own projects, and of course I couldn't help myself and was trying to help them fix some issues .
 		</p>
 		<p>
 			After the playtest I went back to implement some feedback we got about Lock Balance: It being too unforgiving and remove the randomness, or as it was roughly said "let the designers do their job and
@@ -137,13 +135,13 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 		<MediaElement media="aFeCcpqL75Y" location='https://youtube.com/embed' type='iframe' style='float:right;'></MediaElement>
 
 		<p>
-			Lastly we also had to make a small vertical slice for our final presention, as well as a trailer which was made by Dylan and it was incrediblely well made, though admitly just a litte (quite) jaring due to the 
-			choice in music being <a href="https://www.youtube.com/watch?v=F38EuG2dAyM">"igaku" by Kasane Teto,</a> a J/K-pop song which for a scottish opera production was an intresting choice though incredibly catchy
+			Lastly we also had to make a small vertical slice for our final presentation, as well as a trailer which was made by Dylan and it was incredibly well made, though admitly just a litte (quite) jarring due to the 
+			choice in music being <a href="https://www.youtube.com/watch?v=F38EuG2dAyM">"igaku" by Kasane Teto,</a> a J/K-pop song which for a Scottish Opera production was an interesting choice though incredibly catchy
 			but they still enjoyed the humour and appreciated the high energy of it all.
 		</p>
 		
 		<p>
-			The presention itself went well, we talked about the feedback we got during the playtest and how we acted upon it so far and how we'll try and continue to do so, as well the main features necessary for the 
+			The presentation itself went well, we talked about the feedback we got during the playtest and how we acted upon it so far and how we'll try and continue to do so, as well the main features necessary for the 
 			minimum requirements to finish the game, and afterwards what we wanted to do for the final product including some "stretch goals" if we finish ahead of time.
 		</p>
 

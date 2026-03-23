@@ -178,7 +178,12 @@ iframe {
         justify-content: left;
     }
 
-    .GridElement {
+    .project img, .project video {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project .GridElement {
         padding: 10px 5px;
         height: 300px;
 
@@ -195,6 +200,10 @@ iframe {
 
     .project h4 {
         padding: 5px 0px;
+    }
+
+    .project ul {
+        padding-left: 10px;    
     }
 
     .astro-code {
