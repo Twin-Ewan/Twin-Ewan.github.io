@@ -6,11 +6,13 @@ interface Props {
   media: string;
   type: string;
   location: string;
+  ID?: string;
+  AltText?: string;
   style?: string;
   link?: string;
 }
 
-const { media, type, location, style, link } = Astro.props;
+const { media, type, location, ID, AltText, style, link } = Astro.props;
 
 function GetAnchorLink(Media: String)
 {
@@ -20,6 +22,7 @@ function GetAnchorLink(Media: String)
 function GetElementType()
 {
     let HTMLElement = `<${type} `;
+    HTMLElement += ID ? `class="${ID}"` : "";
 
     switch(type)
     {
@@ -33,28 +36,62 @@ function GetElementType()
         {
             HTMLElement += `src="${location}/${media}"`;
         }
-        break;  
+        break;
+
+        case "video":
+        {
+            HTMLElement += `src="/${location}/${media}" style="${style}" controls>`;
+            HTMLElement += GetAltText(media);
+        }
+        break;
+
+        default:
+        {
+            HTMLElement = `<h1>Error</h1>`
+        }
+        break;
     }
 
-    HTMLElement += `style="${style}">`;
+    if(type != "video") HTMLElement += `style="${style}">`;
+
     HTMLElement += `</${type}>`;
     return HTMLElement;
 }
 
 function GetAltText(Media: String)
 {
-    let AltText;
-    try 
+    if(AltText) return AltText;
+    else
     {
-        AltText = fs.readFileSync(`public/${location}/AltText/${Media.split(".")[0]}.txt`, 'utf8');
-    } 
-    catch(err)
-    {
-        AltText = "";
+        try 
+        {
+            return fs.readFileSync(`public/${location}/AltText/${Media.split(".")[0]}.txt`, 'utf8');
+        } 
+        catch(err)
+        {
+            return "";
+        }
     }
-    
-    return AltText;
+}
+
+function CreateElement()
+{
+    let Element;
+
+    if(type != "video" && type != "iframe")
+    {
+        Element = `<a href=/${location}/${GetAnchorLink(media)}>`;
+        Element += GetElementType();
+        Element += "</a>";
+    }
+    else
+    {
+        Element = GetElementType();
+    }
+
+    return Element;
 }
 ---
 
-<a href={`/${location}/${GetAnchorLink(media)}`}><Fragment set:html={GetElementType()}/></a>
+
+<Fragment set:html={CreateElement()}/>

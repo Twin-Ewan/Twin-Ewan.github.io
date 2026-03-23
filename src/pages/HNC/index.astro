@@ -1,0 +1,29 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import GitHub from 'src/components/GitHub.astro';
+
+import MediaGrid from 'src/components/MediaGrid.astro';
+import MediaElement from 'src/components/MediaElement.astro';
+---
+
+<Layout page="HNC">
+	<div class="project">
+		<h3>Pitch a Treatment: Board?</h3>
+        <MediaElement media='logo.png' location='HNC/Pitch' type="img" style='float:left'></MediaElement>
+
+        <p>
+            My "Dream" game, or at least so at the time. For pitch a treatment we were tasked to create a game and I decided to make a mockup
+            of an idea I've had for sometime about a game similar to <a href="en.wikipedia.org/wiki/42_All_Time_Classics">42 All Time Classics</a>, 
+            or at the time new <a href="https://en.wikipedia.org/wiki/51_Worldwide_Classics">51 Worldwide Games</a> but for mobile and PC. The 
+            colour palette was vaugely based on <a href="https://en.wikipedia.org/wiki/Uno_(video_game)">UNO video game</a>.
+        </p>
+        
+        <MediaGrid media={["Pawn.png", "BlackJack.png", "Domino.png", "Snap.png", "Backgammon.png", "Blokus.png", "Go.png", "Tic Tac Toe.png","Tetromino.png", "GameOfUr.png", "ChutesAndLadders.png"]} location='HNC/Pitch' type='img'></MediaGrid>
+    </div>
+
+    <div class="project">
+		<h3>UE4 Level Design</h3>
+        <MediaElement media='UELevel.mp4' location='HNC/LevelDesign' type="video" style='float:left'></MediaElement>
+
+    </div>
+</Layout>

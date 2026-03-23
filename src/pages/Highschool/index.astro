@@ -1,0 +1,57 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import GitHub from 'src/components/GitHub.astro';
+
+import CodeBlock from 'src/components/CodeBlock.astro';
+import MediaGrid from 'src/components/MediaGrid.astro';
+import MediaElement from 'src/components/MediaElement.astro';
+import { ACTION_ERROR_CODES } from 'astro:actions';
+---
+
+<Layout page="Highschool">
+	<div class="project">
+		<h3>Nat 5/Higher: Racers</h3>
+		<GitHub author="Twin-Ewan" repo="Racers" extra="Racers/Racers.html" display="Super Racers"></GitHub>
+
+        <MediaGrid media={["Racers.mp4", "SuperRacers.mp4"]} location='Highschool/Racers' type='video'>
+            <MediaElement media='Racers.html' type='iframe' location='/Highschool/Racers' style='margin:auto'></MediaElement>
+        </MediaGrid>
+
+        <h4>Original Scratch Game</h4>
+        <p>
+            The original Racers game was made in a <a href="https://github.com/scratchfoundation/Scratch_1.4">version of Scratch from 2009</a> which even in
+            2019 was archaric. The idea originally came from an example program inside of a Scratch idea book of a simple racing program the school had laying around
+            I then kept expanding upon it with multiple courses with diffrent themes, multiplayer using <code>WASD</code> keys for player one and arrow keys 
+            for player two and some light customisation to change the car's colours. I had worked on it in-between classes but at the end of year 4 we were told 
+            we had to make a game I decided to retool it into that.
+        </p>
+
+        <h4>3D Remake</h4>
+        <MediaElement media='Racers3D.mp4' type='video' location='Highschool/Racers' style='float:left'></MediaElement>
+        <p>
+            The following year in Highers we were tasked to make another game but now in Unity, so with the leap in engine I wanted to take full advantage of it and
+            do a 3D sequel of the original Racers game but due to some issues with the teacher being replaced with a substitute with minimal knowledge of games dev, 
+            the switch from Unity to <a href="https://phaser.io/">Phaser</a> a simple JavaScript engine which did not do 3D. So for 1.5 months~ all I could do was make 
+            models on a web program called <a href="https://www.figuro.io">Figuro</a> as the computers did not have any modeling software and for my first experience 
+            of 3D modeling, it definitely could've been worse. All in between being made to work on the contingency plan; a small endless runner platfroming game in Phaser.
+        </p>
+
+        <p>
+            Eventually the normal teacher came back and with it I was one of the few guinea pigs who got to test out another game engine for the rest of the class called 
+            <a href="https://godotengine.org/">Godot</a> and it was leagues better, so at last I was finally at long last able to actually do work on the game in an 
+            engine though a month in I had only gotten far enough to make the shopping level and was in the midst of making variants of shelving to wall off the tracks 
+            I came to the realisation that I would not be able finish everything I wanted with the little time I had left due to all of previous nonsense and had to quickly
+            pivot to the following game to...
+        </p>
+
+        <MediaGrid media={["BikeModel.gif", "GolfCartModel.gif", "WagonModel.gif", "CarModel.gif", "VanModel.gif", "TrolleyModel.gif"]} location='Highschool/Racers' type='img'></MediaGrid>
+
+        <h4>2D Remake</h4>
+        <p>
+            Quickly pivoting from the 3D remake, I scrambled to change to something else deliverable and landed up on a port to Godot. I had to remake the tracks with the
+            switch from 3:4 to 16:9 in tandem with the increase in resolution, as well as changing the space theme into a volcano due to me losing the original image of
+            the asteroids meaning they could not enjoy the increase resolution and some other miscellaneous changes such as changing the player sprites to include numbers
+            to avoid confusion.
+        </p>
+    </div>
+</Layout>

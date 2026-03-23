@@ -60,29 +60,36 @@ p code {
     padding: 2px 20px;
 }
 
-.project img {
+.project img, .project video {
     width: 33%;
     max-width: 500px;
     padding: 5px 10px;
+}
+
+iframe {
+    border-color: #39273B;
+    margin-left: 10px;
 }
 
 .footnote li a{
     text-decoration: none;
 }
 
-iframe {
-    border-color: #39273B;
-}
-
-.ImageGrid {
-    display:flex; 
-    overflow-x:auto;
-    justify-content: center;
+.MediaGrid {
+    display: flex; 
+    overflow-x: auto;
     align-items: center;
 }
 
-.ImageGrid a img {
-    min-width: 90%;
+/* Letter boxes so can be manually set without problem*/
+.MediaGrid iframe {
+    width: 445px;
+    height: 250px
+}
+
+.project .GridElement {
+    max-height: 250px;
+    width: auto;
     margin: auto;
 }
 
@@ -162,26 +169,21 @@ iframe {
         text-align: center;
     }
 
-
     .project {
         margin: 10px 0px;
         padding: 10px;
     }
 
-    .project img {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px 0px;
-    }
-
-    .ImageGrid {
+    .MediaGrid {
         justify-content: left;
     }
 
-    .ImageGrid a img {
+    .GridElement {
         padding: 10px 5px;
-        min-width: 300px;
-        width: 90%;
+        height: 300px;
+
+        width: none;
+        max-width: none;
     }
 
     .project p, .project h3 {

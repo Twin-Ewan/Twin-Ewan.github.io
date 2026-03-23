@@ -3,7 +3,7 @@ import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
 
 import MediaElement from 'src/components/MediaElement.astro';
-import ImageGrid from 'src/components/ImageGrid.astro';
+import MediaGrid from 'src/components/MediaGrid.astro';
 import CodeBlock from 'src/components/CodeBlock.astro';
 ---
 
@@ -32,7 +32,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 		</p>
 
 		<div id="PuffyPitch">
-			<ImageGrid location="Year3/IP3" images={[`Concept1.png`, `Concept2.png`, `Concept3.png`]} link="PitchSlides.pdf"></ImageGrid>
+			<MediaGrid location="Year3/IP3" media={[`Concept1.png`, `Concept2.png`, `Concept3.png`]} link="PitchSlides.pdf" type='img'></MediaGrid>
 		</div>
 
 		<MediaElement media="GyroTest.png" location='Year3/IP3' type='img' style='float: right; height:300px; width:150px'></MediaElement>
@@ -79,7 +79,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 
 		<h4>Lock Balance: Week 5 - 9</h4>
 
-		<ImageGrid images={[`LockBalance1.gif`, `LockBalance2.gif`, `LockBalance3.gif`]} location="Year3/IP3"></ImageGrid>
+		<MediaGrid media={[`LockBalance1.gif`, `LockBalance2.gif`, `LockBalance3.gif`]} location="Year3/IP3" type="img"></MediaGrid>
 
 		<p>
 			I started work on the first minigame Lock Balance, or at the time called "Canal Balance", I made the boat be pushed around using one dimensional perlin noise, one for each axes and 
@@ -117,7 +117,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 			make Puffy flash when damaged, and made the game overall a lot faster.
 		</p>
 
-		<ImageGrid images={[`CanalCruiser1.gif`, `CanalCruiser2.gif`, `CanalCruiser3.gif`]} location="Year3/IP3"></ImageGrid>
+		<MediaGrid media={[`CanalCruiser1.gif`, `CanalCruiser2.gif`, `CanalCruiser3.gif`]} location="Year3/IP3" type='img'></MediaGrid>
 
 		<h4>Finishing Touches: Week 12</h4>
 		<MediaElement media="LockBalance4.gif" location='Year3/IP3' type='img' style='float:left'></MediaElement>
@@ -147,7 +147,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 			minimum requirements to finish the game, and afterwards what we wanted to do for the final product including some "stretch goals" if we finish ahead of time.
 		</p>
 
-		<ImageGrid images={[`Vertical1.png`, `Vertical2.png`, `Vertical3.png`, `Vertical4.png`]} location="Year3/IP3" link="Vertical Slice Pitch.pdf"></ImageGrid>
+		<MediaGrid media={[`Vertical1.png`, `Vertical2.png`, `Vertical3.png`, `Vertical4.png`]} location="Year3/IP3" link="Vertical Slice Pitch.pdf" type='img'></MediaGrid>
 
 	</div>  
 </Layout>

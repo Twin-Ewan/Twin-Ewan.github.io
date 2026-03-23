@@ -1,0 +1,29 @@
+---
+import MediaElement from "src/components/MediaElement.astro";
+
+interface Props {
+  media: string[];
+  location: string;
+  type: string;
+  link?: string;
+}
+
+const { media, location, link, type } = Astro.props;
+
+function GetAnchorLink(item: String)
+{
+  return  link ? link : item;
+}
+
+function GetAltText(item: String)
+{
+  return item.split(".")[0];
+}
+---
+
+<div class="MediaGrid">
+  <slot />
+  {
+    media.map((item: string) => <MediaElement media={item} location={location} link={link} type={type} ID="GridElement"></MediaElement>)
+  }
+</div>

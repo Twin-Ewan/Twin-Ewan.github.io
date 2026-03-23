@@ -1,7 +1,9 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
 import GitHub from 'src/components/GitHub.astro';
+
 import CodeBlock from 'src/components/CodeBlock.astro';
+import MediaElement from 'src/components/MediaElement.astro';
 ---
 
 <Layout page="Year 4">
@@ -40,7 +42,7 @@ import CodeBlock from 'src/components/CodeBlock.astro';
 			made the "GitHub Repo: [Repo Link]" text at the top of each project automatically gets "GitHub Repo:" preprends to the links. All in the name to make things easier.
 		</p>
 
-		<a href="/Year4/AstroFileStructure.png"><img src="/Year4/AstroFileStructure.png" style="float: right;"/></a>
+		<MediaElement media="AstroFileStructure.png" location='Year4' type='img' style='float:right'></MediaElement>
 
 		<p>
 			After showing off my good work to my dear friends I was quickly informed that it was not "good work" and was an abomination: Requiring javascript for basic UI 
