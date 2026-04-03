@@ -181,6 +181,7 @@ iframe {
     .project img, .project video {
         width: 100%;
         max-width: 100%;
+        padding: 0px;
     }
 
     .project .GridElement {

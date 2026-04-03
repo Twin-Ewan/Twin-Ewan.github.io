@@ -1,0 +1,8 @@
+---
+    let headers = document.querySelectorAll("h3");
+
+    headers?.forEach(project => {
+        if(!project.id) project.id = project.innerText;
+    });
+
+---
